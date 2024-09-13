@@ -13,9 +13,9 @@ h1 {
     display: grid;
     width: 600px;
     height: 600px;
-    padding: 10px;
+    overflow: hidden;
 }
 
 .cell {
-    border: 1px solid #000000;
+    border: 1px solid #f8f8f8;
 }

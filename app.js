@@ -10,6 +10,8 @@
  */
 
 // variables
+const ink = ["#000000"];
+
 const grid = document.querySelector(".grid");
 
 
@@ -21,7 +23,7 @@ function createGrid(gridSize) {
     grid.style.cssText =
         `grid-template-columns: repeat(${gridSize}, 1fr); ` 
         + `grid-template-rows: repeat(${gridSize}, 1fr); ` 
-        + `border: 1px solid #000000;`
+        + `border: 5px solid #000000;`
         + `border-radius: 12px;`;
 
     // square the grid
@@ -32,12 +34,23 @@ function createGrid(gridSize) {
         const gridCell = document.createElement("div");
         gridCell.classList.add("cell");
         grid.appendChild(gridCell);
-    }
+
+        gridCell.addEventListener("mouseover", colorTrail);
+    };
+    
 }
 
 
+// Kevin was here 
 
-createGrid(6);
+
+
+function colorTrail() { 
+    this.style.backgroundColor = ink[0];
+}
+
+
+createGrid(100);
 
 
 // -------------------------------------------------------------------------------------
@@ -50,6 +63,10 @@ createGrid(6);
     - There are multiple ways to change the color of the divs, including:
         - Adding a new class to the div.
         - Changing the div’s background color using JavaScript. */
+
+    
+
+
 
 // -------------------------------------------------------------------------------------
 
